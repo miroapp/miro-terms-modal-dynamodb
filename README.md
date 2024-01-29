@@ -12,8 +12,8 @@ __Important__: this application uses various AWS services and there are costs as
 ```bash
 .
 ├── README.MD                   <-- This instructions file
-├── webassets                   <-- HTML and JavaScript files for the Miro app
 ├── readApp                     <-- Source code for the serverless backend ("Read" databse Lambda function)
+├── webassets                   <-- HTML and JavaScript files for the Miro app
 ├── writeApp                    <-- Source code for the serverless backend ("Write" databse Lambda function)
 ```
 ## Requirements
