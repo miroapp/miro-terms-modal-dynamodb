@@ -1,5 +1,4 @@
-# Miro Terms Modal Banner App
-##(with Web-SDK V2 & AWS DynamoDB)
+# Miro Terms Modal Banner App (Web-SDK V2 & AWS DynamoDB)
 
 The Miro Web SDK allows you to extend Miro functionality to customise it based on your company needs. In this guide we will show how to create a custom modal banner on your Miro boards that you can show to your users/attendees with any desired content and/or call to actions.
 
