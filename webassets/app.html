@@ -76,7 +76,7 @@
             async function checkModal(seconds) {
                 let canOpenModal = await miro.board.ui.canOpenModal();
                 if (!canOpenModal) {
-                    let miroModal = getMiroTermsModalFrame();
+                    let miroModal = await getMiroTermsModalFrame();
                     if (miroModal === null) {
                         console.log(`There is another modal currently open - retrying in ${seconds} second(s)`);
                         await holdScriptExecution(seconds * 1000);
