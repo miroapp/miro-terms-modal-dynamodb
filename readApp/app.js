@@ -10,7 +10,7 @@ exports.handler = async (event) => {
     };
     
     const responseHeaders = {
-        "Access-Control-Allow-Headers" : "Content-Type,Accept,Cache-Control",
+        "Access-Control-Allow-Headers" : "Content-Type,Accept,Cache-Control,Pragma",
         "Access-Control-Allow-Origin": "*", // Replace wildcard (*) with your S3 bucket base URL (visible in your AWS SAML CLI Outputs) - See step 2.10 of the PDF guide
         "Access-Control-Allow-Methods": "OPTIONS,GET", // Allow only GET request
         "Content-Type": "application/json"
