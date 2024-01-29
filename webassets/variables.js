@@ -1,6 +1,6 @@
 /* variables.js */
 
-var MODAL_URL = 'replace with your modal.html URL from AWS S3' // keep the single quotes around the value (e.g. 'https://miro-terms-banner-021ba44a2fc7.s3.eu-central-1.amazonaws.com/webassets/modal.html';)
+var MODAL_URL = 'replace with your "modal.html" URL from AWS S3' // keep the single quotes around the value (e.g. 'https://miro-terms-banner-021ba44a2fc7.s3.eu-central-1.amazonaws.com/webassets/modal.html';)
 
 var API_ENDPOINT_BASE_URL = 'replace with the value of "ApiBaseURL" from your AWS SAM CLI Output'; // keep the single quotes around the value (e.g. 'https://e4g624kyue.execute-api.eu-central-1.amazonaws.com';)
 
