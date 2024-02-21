@@ -20,7 +20,7 @@ __Important__: this application uses various AWS services and there are costs as
 
 * AWS CLI already configured with Administrator permission
 * [AWS SAM CLI installed](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html) - minimum version 0.48.
-* [NodeJS 14.x installed](https://nodejs.org/en/download/)
+* [NodeJS 16.x installed](https://nodejs.org/en/download/)
 
 ## Installing the application
 
