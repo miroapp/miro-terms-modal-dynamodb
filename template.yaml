@@ -101,7 +101,7 @@ Resources:
       FunctionName: !Join ['-', ['MiroBannerTermsReadFunction', !Select [4, !Split ['-', !Select [2, !Split ['/', !Ref AWS::StackId]]]]]]
       Description: !Sub 'Lambda function for the "Miro Terms Modal app". It reads data from the DynamoDB table "${MiroBannerTermsAcceptersTable}"'
       Handler: app.handler
-      Runtime: nodejs14.x
+      Runtime: nodejs16.x
       CodeUri: readApp/
       Timeout: 10
       Role: !GetAtt MiroBannerTermsReadFunctionRole.Arn
@@ -116,7 +116,7 @@ Resources:
       FunctionName: !Join ['-', ['MiroBannerTermsWriteFunction', !Select [4, !Split ['-', !Select [2, !Split ['/', !Ref AWS::StackId]]]]]]
       Description: !Sub 'Lambda function for the "Miro Terms Modal app". It writes data on the DynamoDB table "${MiroBannerTermsAcceptersTable}"'
       Handler: app.handler
-      Runtime: nodejs14.x
+      Runtime: nodejs16.x
       CodeUri: writeApp/
       Timeout: 10
       Role: !GetAtt MiroBannerTermsWriteFunctionRole.Arn
