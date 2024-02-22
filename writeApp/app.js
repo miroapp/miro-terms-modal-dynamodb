@@ -19,7 +19,7 @@ exports.handler = async (event) => {
         "Content-Type": "application/json"
     };
     
-    if (apiPayload.hasOwnProperty('id')) {
+    if (!!Object.getOwnPropertyDescriptor(apiPayload, 'id')) {
         const userId = apiPayload.id.toString();
         const isValidUserId = onlyLettersAndNumbers(userId);
         
