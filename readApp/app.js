@@ -16,7 +16,7 @@ exports.handler = async (event) => {
         "Content-Type": "application/json"
     };
     
-    if (event && event.hasOwnProperty('queryStringParameters') && !event.queryStringParameters) {
+    if (event && !!Object.getOwnPropertyDescriptor(event, 'queryStringParameters') && !event.queryStringParameters) {
         
         /* Returning a 400 error if the URL parameter "u" is not passed in the GET request */
         return {
@@ -25,8 +25,8 @@ exports.handler = async (event) => {
             body: JSON.stringify({error: 'Bad Request'})
         };
     }
-    
-    if (event && event.hasOwnProperty('queryStringParameters') && event.queryStringParameters.hasOwnProperty('u') && event.queryStringParameters.u !== '') {
+
+    if (event && !!Object.getOwnPropertyDescriptor(event, 'queryStringParameters') && !!Object.getOwnPropertyDescriptor(event.queryStringParameters, 'u') && event.queryStringParameters.u !== '') {
         
         const userId = event.queryStringParameters.u.toString();
         const isValidUserId = onlyLettersAndNumbers(userId);
@@ -60,8 +60,8 @@ exports.handler = async (event) => {
 
     try {
         const data = await dynamoDB.get(params).promise();
-        
-        if (data && data.hasOwnProperty('Item') && data.Item.hasOwnProperty('id') && data.Item.id.toString() === userId) {
+
+        if (data && !!Object.getOwnPropertyDescriptor(data, 'Item') && !!Object.getOwnPropertyDescriptor(data.Item, 'id') && data.Item.id.toString() === userId) {
             
             /* Returning a 200 OK if the value of the URL parameter "u" matches an entry in the MiroBannerTermsAccepters DynamoDB table */
             return {
