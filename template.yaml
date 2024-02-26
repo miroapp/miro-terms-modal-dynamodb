@@ -270,8 +270,7 @@ Resources:
 Outputs:
   S3BucketBaseUrls:
     Description: 'Base URL of the S3 bucket where the web assets of the Miro app will be hosted'
-    Value: 
-      - !If:
+    Value: !If:
         - IsNotUSEast1
         - Fn::Sub: 'https://${MiroTermsBannerFrontend}.s3.${AWS::Region}.amazonaws.com'
         - Fn::Sub: 'https://${MiroTermsBannerFrontend}.s3.amazonaws.com'
