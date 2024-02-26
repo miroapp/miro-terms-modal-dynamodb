@@ -174,7 +174,11 @@ Resources:
                         !Join
                           - ''
                           - - "'"
-                            - Fn::Sub: 'https://${MiroTermsBannerFrontend}.s3.${AWS::Region}.amazonaws.com https://${MiroTermsBannerFrontend}.s3.amazonaws.com'
+                            - Fn::If:
+                                - IsNotUSEast1
+                                - Fn::Sub: 'https://${MiroTermsBannerFrontend}.s3.${AWS::Region}.amazonaws.com'
+                                - Fn::Sub: 'https://${MiroTermsBannerFrontend}.s3.amazonaws.com'
+                              Condition: IsNotUSEast1
                             - "'"
                     responseTemplates:
                       application/json: |
@@ -226,7 +230,11 @@ Resources:
                         !Join
                           - ''
                           - - "'"
-                            - Fn::Sub: 'https://${MiroTermsBannerFrontend}.s3.${AWS::Region}.amazonaws.com https://${MiroTermsBannerFrontend}.s3.amazonaws.com'
+                            - Fn::If:
+                                - IsNotUSEast1
+                                - Fn::Sub: 'https://${MiroTermsBannerFrontend}.s3.${AWS::Region}.amazonaws.com'
+                                - Fn::Sub: 'https://${MiroTermsBannerFrontend}.s3.amazonaws.com'
+                              Condition: IsNotUSEast1
                             - "'"
                     responseTemplates:
                       application/json: |
@@ -260,6 +268,10 @@ Resources:
       Principal: 'apigateway.amazonaws.com'
       SourceArn: !Sub 'arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${MiroBannerTermsAPI}/*/*/*'
 
+  ## Condition to adjust URLs based on region (the Default region "us-eat-1" is not added to URLs. For other regions the region is part of the URLs)
+  Conditions:
+    IsNotUSEast1: !Not [!Equals [!Ref "AWS::Region", "us-east-1"]]
+    
 ## Take a note of the outputs for deploying the workflow templates in this sample application
 Outputs:
   S3BucketBaseUrls:
