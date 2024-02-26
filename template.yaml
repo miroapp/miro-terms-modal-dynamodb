@@ -226,7 +226,7 @@ Resources:
                         !Join
                           - ''
                           - - "'"
-                            - Fn::Sub: 'https://${MiroTermsBannerFrontend}.s3.${AWS::Region}.amazonaws.com'
+                            - Fn::Sub: 'https://${MiroTermsBannerFrontend}.s3.${AWS::Region}.amazonaws.com https://${MiroTermsBannerFrontend}.s3.amazonaws.com'
                             - "'"
                     responseTemplates:
                       application/json: |
