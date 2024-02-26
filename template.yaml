@@ -268,7 +268,7 @@ Resources:
     
 ## Take a note of the outputs for deploying the workflow templates in this sample application
 Outputs:
-  S3BucketBaseUrls:
+  S3BucketBaseUrl:
     Description: 'Base URL of the S3 bucket where the web assets of the Miro app will be hosted'
     Value: !If
         - IsNotUSEast1
