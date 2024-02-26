@@ -264,7 +264,7 @@ Resources:
 Outputs:
   S3BucketBaseUrls:
     Description: 'Base URL of the S3 bucket where the web assets of the Miro app will be hosted'
-    Value: !Sub 'https://${MiroTermsBannerFrontend}.s3.${AWS::Region}.amazonaws.com' !Sub 'https://${MiroTermsBannerFrontend}.s3.amazonaws.com'
+    Value: !Sub 'https://${MiroTermsBannerFrontend}.s3.${AWS::Region}.amazonaws.com https://${MiroTermsBannerFrontend}.s3.amazonaws.com'
   ApiBaseURL:
     Description: 'Base URL of HTTP API endpoint to read and write on the MiroBannerTermsAcceptersTable database'
     Value: !Sub 'https://${MiroBannerTermsAPI}.execute-api.${AWS::Region}.amazonaws.com'
